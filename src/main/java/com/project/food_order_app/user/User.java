@@ -1,12 +1,14 @@
 package com.project.food_order_app.user;
 
-import com.project.food_order_app.cart.Cart;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Document
 public class User {
+    @Id
+    private String id;
     private String uid;
     private String email;
     private String password;
@@ -52,5 +54,9 @@ public class User {
 
     public void setCart(List<Cart> cart) {
         this.cart = cart;
+    }
+
+    public String getId() {
+        return id;
     }
 }
